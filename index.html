@@ -3,33 +3,38 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Caixa Eletronico</title>
     </head>
     <body>
         <script>
-            let resposta= prompt("Digite seu nome")
-            alert(resposta)
-
-            let saldo= 0
-            let sair= false
-
+            let saldo = 0
+            let sair = false
             while(!sair){
-                let opcao=prompt("Bem Vindo \n " + "4 -> sair")
-                if(opcao==4){
-                    alert("Obrigado, até logo")
-                    sair= true
-
-                }else if (opçao==1){
-                    let valor= prompt ("Qual o valor do depósito")
-                    saida= saldo + parseFloat (valor)
-                    alert(saldo)
+                let opcao = prompt(
+                 "Bem Vindo! \n" +
+                 "1 -> Depositar \n" +
+                 "2 -> Consultar \n" +
+                 "3 -> Sacar \n" +
+                 "4 -> Sair")
+            if(opcao == 4) {
+                alert("Obrigado, até a próxima")
+                sair = true
+            } else if(opcao == 1) {
+                let valor = prompt("Qual o valor do deposito?")
+                saldo = saldo + parseFloat(valor)
+                alert("Depositado com sucesso!")
+            } else if (opcao == 2) {
+                alert("Seu saldo é de : " + saldo)
+            } else if (opcao == 3) {
+                let valor = Number(prompt("Digite o valor que deseja sacar:"))
+                if(valor > valor) {
+                    alert("Saldo Insuficiente")
+                    continue
                 }
-                else {
-                    alert("opção invalida, tente novamente")
-                }
-                
-                
+                saldo -= valor
+            }      
             }
         </script>
+        
     </body>
 </html>
